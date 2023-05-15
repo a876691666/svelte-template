@@ -1,0 +1,5 @@
+{
+  "name": "app",
+  "input": "./src/index.svelte",
+  "svelteOutput": "./.output.js"
+}
