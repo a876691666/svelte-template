@@ -1,6 +1,10 @@
 <script>
-  import * as echarts from "echarts";
-  let container;
+  import * as echarts from "echarts/core";
+  import { BarChart } from "echarts/charts";
+  import { TitleComponent, TooltipComponent, GridComponent } from "echarts/components";
+  import { CanvasRenderer } from "echarts/renderers";
+  echarts.use([TitleComponent, TooltipComponent, GridComponent, BarChart, CanvasRenderer]);
+  let container; 
   import { onMount } from "svelte";
 
   onMount(() => {
@@ -17,7 +21,7 @@
 </script>
 
 <main>
-  <div bind:this={container} />
+  <div bind:this={container} class="chart-box" />
   <h1>Hello {name}!</h1>
   <p>
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte
@@ -31,6 +35,11 @@
     padding: 1em;
     max-width: 240px;
     margin: 0 auto;
+  }
+
+  .chart-box {
+    width: 600px;
+    height: 400px;
   }
 
   h1 {
